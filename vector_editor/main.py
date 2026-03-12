@@ -1,5 +1,9 @@
-def main():
-    print("Vector Editor CLI")
+from vector_editor.cli import CLI
+
+
+def main() -> None:
+    cli = CLI()
+    cli.run()
 
 
 if __name__ == "__main__":
