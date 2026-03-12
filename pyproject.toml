@@ -8,6 +8,8 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
     "ruff>=0.15.5",
 ]
 
@@ -25,3 +27,9 @@ select = [
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+warn_unused_configs = true
+disallow_untyped_defs = true
