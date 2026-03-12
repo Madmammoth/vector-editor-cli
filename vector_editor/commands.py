@@ -31,11 +31,18 @@ def list_command(_: list[str], repo: ShapeRepository) -> None:
 
 
 def delete_command(args: list[str], repo: ShapeRepository) -> None:
-    shape_id = int(args[0])
+    if not args:
+        print("Error: delete requires id")
+        return
+
+    try:
+        shape_id = int(args[0])
+    except ValueError:
+        print("Error: id must be integer")
+        return
 
     if repo.delete(shape_id):
         print("Deleted")
-
     else:
         print("Shape not found")
 
@@ -71,13 +78,14 @@ def execute_command(command: str, repo: ShapeRepository) -> None:
     if not parts:
         return
 
-    cmd = parts[0]
+    cmd = parts[0].lower()
     args = parts[1:]
 
     handler = COMMANDS.get(cmd)
 
     if not handler:
-        print("Unknown command")
+        print(f"Unknown command: {cmd}")
+        help_command([], repo)
         return
 
     handler(args, repo)
