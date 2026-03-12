@@ -8,5 +8,5 @@ class Point(Shape):
     x: float
     y: float
 
-    def describe(self) -> str:
+    def __str__(self) -> str:
         return f"Point({self.x}, {self.y})"

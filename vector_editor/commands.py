@@ -32,7 +32,7 @@ def list_command(_: list[str], repo: ShapeRepository) -> None:
         return
 
     for shape_id, shape in shapes.items():
-        print(f"{shape_id}: {shape.describe()}")
+        print(f"{shape_id}: {shape}")
 
 
 def delete_command(args: list[str], repo: ShapeRepository) -> None:

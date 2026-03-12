@@ -10,5 +10,5 @@ class Segment(Shape):
     x2: float
     y2: float
 
-    def describe(self) -> str:
+    def __str__(self) -> str:
         return f"Segment(({self.x1}, {self.y1}) -> ({self.x2}, {self.y2}))"

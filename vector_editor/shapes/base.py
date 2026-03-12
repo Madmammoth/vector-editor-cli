@@ -5,6 +5,6 @@ class Shape(ABC):
     """Base class for all shapes."""
 
     @abstractmethod
-    def describe(self) -> str:
+    def __str__(self) -> str:
         """Return human-readable description of the shape."""
         raise NotImplementedError

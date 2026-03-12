@@ -9,5 +9,5 @@ class Circle(Shape):
     y: float
     radius: float
 
-    def describe(self) -> str:
+    def __str__(self) -> str:
         return f"Circle(center=({self.x}, {self.y}), r={self.radius})"

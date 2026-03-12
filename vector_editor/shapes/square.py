@@ -9,5 +9,5 @@ class Square(Shape):
     y: float
     side: float
 
-    def describe(self) -> str:
+    def __str__(self) -> str:
         return f"Square(top_left=({self.x}, {self.y}), side={self.side})"
