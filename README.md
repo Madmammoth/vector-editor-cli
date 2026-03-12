@@ -26,7 +26,7 @@ cd vector-editor-cli
 
 ```bash
 uv sync
-uv run python -m vector_editor.main
+uv run vector-editor
 ```
 
 ---
@@ -102,5 +102,11 @@ uv run mypy .
 Run tests:
 
 ```
-uv run python -m pytest
+uv run pytest
 ```
+
+- Tested with Python 3.13
+
+---
+
+Project implemented as a test assignment.

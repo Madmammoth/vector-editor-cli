@@ -5,12 +5,6 @@ from vector_editor.commands import execute_command
 from vector_editor.repository import ShapeRepository
 
 
-def run(cmd: str) -> ShapeRepository:
-    repo = ShapeRepository()
-    execute_command(cmd, repo)
-    return repo
-
-
 @pytest.mark.parametrize(
     "command,expected",
     [
