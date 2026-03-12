@@ -14,7 +14,12 @@ def create_command(args: list[str], repo: ShapeRepository) -> None:
         print("Unknown shape")
         return
 
-    shape = factory(args[1:])
+    try:
+        shape = factory(args[1:])
+    except ValueError as e:
+        print(f"Error: {e}")
+        return
+
     shape_id = repo.add(shape)
     print(f"Created shape id={shape_id}")
 
